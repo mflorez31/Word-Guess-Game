@@ -1,0 +1,66 @@
+.body-container {
+ background-color: black;
+}
+
+.jumbotron  {
+    background-color: black;
+    height: 350px;
+}
+
+.img-TheHangman {
+    float: left;
+}
+
+.display-4 {
+    color: white;
+    float: left;
+    margin: 40px 5px 5px 25px
+}
+
+.lead {
+    color: white;
+    float: left;
+    margin: 20px 5px 10px 25px
+}
+
+.game-container {
+    background-image: url("../images/QHB.jpg");
+    color: aliceblue;
+}
+
+#win-pic {
+   visibility: hidden; 
+}
+
+.guess-img-container {
+    position:relative;
+}
+
+.guess-img{
+
+}
+
+#guess-1 {
+    position:absolute;
+    height: 100%;
+    widows: 100%;
+    z-index: 0;
+}
+
+#guess-2 {
+    position:absolute;
+    top: 5px; left: 35px;
+    z-index: 1;
+} 
+
+#guess-3 {
+    position:absolute;
+    top: 9px; left: 89px;
+    z-index: 1;
+} 
+
+#guess-4 {
+    position:absolute;
+    top: 70px; left: 180px;
+    z-index: 1;
+} 

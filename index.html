@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+
+    <title>Document</title>
+</head>
+<body>
+<div class="body-container">   
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container" >
+            <div class="row">
+            
+            <div class="col-sm-3">
+            <img class="img-TheHangman" src="assets/images/the-hangman.jpg" style="width: 300px; height: 300px;">
+            </div>
+            <div class="col-lg-6">
+            <h1 class="display-4">The Hangman Game</h1>
+            <p class="lead">A Quentin Tarantino movie themed hangman game.. </p>
+            <p class="lead">Guess the Quentin Tarantino character or movie title below.</p>
+            </div>
+            <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="game-container">
+        <div class="row" style="Height: 800px;">
+            <div class="col-sm-2">col</div>
+            <div class="col-md-4">
+                <h2>Hint Quote</h2>
+                <div id="hintQuote"></div>
+                <div id="win-pic">
+                    <h2>YOU WIN!</h2>
+                </div>
+                <h3>CURRENT WORD</h3>
+                    <h2><span id="currentWord"><strong>...None. Press Start</strong></span></h2>
+                <Br>
+                <h4>Letters already guessed</h4>
+                <div id="prevGuesses"></div>
+            </div>
+            <div class="col-md-4">
+                    <button id="button-start" class="btn btn-dark start" value="start"><h1>Start</h1></button>
+                    <button id="button-reset" class="btn btn-dark reset" value="reset"><h1>Reset</h1></button>
+                <h2>Click Start Then Press Any Key To Get Started!</h2>
+                <div class="guess-img-container">
+                    <div id="guess-1" class="guess-img"> <img src="assets/images/stand-0.jpg" style="width: 500px; height: 500px;"> </div>
+                    <div id="guess-2" class="guess-img"> <img src="assets/images/post-1.jpg"style="width: 54px; height: 319px;"></div>
+                    <div id="guess-3" class="guess-img"> <img src="assets/images/post-2.jpg"style="width: 220px; height: 105px;"></div>
+                    <div id="guess-4" class="guess-img"> <img src="assets/images/Rope.jpg"style="width: 75px; height: 105px;"></div>
+                    <div id="guess-5" class="guess-img"> <img src=""></div>
+                    <div id="guess-6" class="guess-img"> <img src=""></div>
+                    <div id="guess-7" class="guess-img"> <img src=""></div>
+                    <div id="guess-8" class="guess-img"> <img src=""></div>
+                    <div id="guess-9" class="guess-img"> <img src=""></div>
+                    <div id="guess-10" class="guess-img"> <img src=""></div>
+                </div>
+
+            </div>
+            <div class="col-sm-2">col</div>
+        </div>
+
+    </div>
+    
+    <script src="assets/javascript/game.js"></script>
+
+</div>     
+</body>
+</html>
