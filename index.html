@@ -70,73 +70,73 @@
         </nav>
 </div>
 
-<div class="body-container">   
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container" >
+<div class="container-fluid clearfix" >
+    <div class="row">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container-fluid" >
+                <div class= "container" id="jt">
+                    <img class="img-TheHangman" src="assets/images/the-hangman.jpg">
+                    <div class="container" ><h1 class="display-4">The Hangman Game</h1>
+                        <p class="lead">A Quentin Tarantino movie themed hangman game.. <br> Can you guess the word, character or movie title before the Hangman gets you?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="game-container">
             <div class="row">
-            
-            <div class="col-sm-3">
-            <img class="img-TheHangman" src="assets/images/the-hangman.jpg">
-            </div>
-            <div class="col-lg-6">
-            <h1 class="display-4">The Hangman Game</h1>
-            <p class="lead">A Quentin Tarantino movie themed hangman game.. </p>
-            <p class="lead">Can you guess the word, character or movie title before the Hangman gets you?</p>
-            </div>
-            <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <div id="bs"></div>
+    
+                    <h2 id="clues"></h2>
+                    <br>
+                    <h3 id="mType"></h3>
+                    <strong> <h3 id="aType"></h3> </strong>
+                    <br>
+                    <h2 id="mQuote"></h2>
+                    <h3 id="aQuote"></h3>
+                    <br>
+                </div>
+    
+                <div class="col-sm-3">
+                    <h3>CURRENT WORD</h3>
+                    <h2><span id="currentWord"><strong>...None. Press Start</strong></span></h2>
+                    <Br>
+                    <h4 id="lag"></h4>
+                    <strong><h4 id="prevGuesses"></h4></strong>
+                    <br>
+                    <h3 id="gr"></h3>
+                    <h1 id="guessesRemaining"style="color: red;"></h1>
+                </div>
+    
+                <div class="col-md-5">
+                    <div class="guessImgcontainer">
+                        <div id="guess-1" class="guessImg"> <img src="assets/images/stand-0.jpg" style="width: 500px; height: 500px;"> </div>
+                        <div id="guess-2" class="guessImg"> <img src="assets/images/post-1.jpg"style="width: 54px; height: 319px;"></div>
+                        <div id="guess-3" class="guessImg"> <img src="assets/images/post-2.jpg"style="width: 220px; height: 105px;"></div>
+                        <div id="guess-4" class="guessImg"> <img src="assets/images/Rope.jpg"style="width: 75px; height: 105px;"></div>
+                        <div id="guess-5" class="guessImg"> <img src="assets/images/head.jpg"style="width: 75px; height: 65px;"></div>
+                        <div id="guess-6" class="guessImg"> <img src="assets/images/body.jpg"style="width: 75px; height: 65px;"></div>
+                        <div id="guess-7" class="guessImg"> <img src="assets/images/Larm.jpg"style="width: 75px; height: 65px;"></div>
+                        <div id="guess-8" class="guessImg"> <img src="assets/images/Rarm.jpg"style="width: 75px; height: 65px;"></div>
+                        <div id="guess-9" class="guessImg"> <img src="assets/images/Rleg.jpg"style="width: 75px; height: 65px;"></div>
+                        <div id="guess-10" class="guessImg"> <img src="assets/images/Lleg.jpg"style="width: 75px; height: 65px;"></div>
+                    </div>
+    
+                </div>
             </div>
         </div>
     </div>
-    <div class="game-container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div id="bs"></div>
-
-                <h2 id="clues"></h2>
-                <br>
-                <h3 id="mType"></h3>
-                <strong> <h3 id="aType"></h3> </strong>
-                <br>
-                <h2 id="mQuote"></h2>
-                <h3 id="aQuote"></h3>
-                <br>
-                <div id="win-pic">
-                    <h2>YOU WIN!</h2>
-                </div>
-                
-            </div>
-            <div class="col-sm-3">
-                <h3>CURRENT WORD</h3>
-                <h2><span id="currentWord"><strong>...None. Press Start</strong></span></h2>
-                <Br>
-                <h4 id="lag"></h4>
-                <strong><h4 id="prevGuesses"></h4></strong>
-                <br>
-                <h3 id="gr"></h3>
-                <h1 id="guessesRemaining"style="color: red;"></h1>
-            </div>
-
-            <div class="col-md-5">
-                <div class="guessImgcontainer">
-                    <div id="guess-1" class="guessImg"> <img src="assets/images/stand-0.jpg" style="width: 500px; height: 500px;"> </div>
-                    <div id="guess-2" class="guessImg"> <img src="assets/images/post-1.jpg"style="width: 54px; height: 319px;"></div>
-                    <div id="guess-3" class="guessImg"> <img src="assets/images/post-2.jpg"style="width: 220px; height: 105px;"></div>
-                    <div id="guess-4" class="guessImg"> <img src="assets/images/Rope.jpg"style="width: 75px; height: 105px;"></div>
-                    <div id="guess-5" class="guessImg"> <img src="assets/images/head.jpg"style="width: 75px; height: 65px;"></div>
-                    <div id="guess-6" class="guessImg"> <img src="assets/images/body.jpg"style="width: 75px; height: 65px;"></div>
-                    <div id="guess-7" class="guessImg"> <img src="assets/images/Larm.jpg"style="width: 75px; height: 65px;"></div>
-                    <div id="guess-8" class="guessImg"> <img src="assets/images/Rarm.jpg"style="width: 75px; height: 65px;"></div>
-                    <div id="guess-9" class="guessImg"> <img src="assets/images/Rleg.jpg"style="width: 75px; height: 65px;"></div>
-                    <div id="guess-10" class="guessImg"> <img src="assets/images/Lleg.jpg"style="width: 75px; height: 65px;"></div>
-                </div>
-
-            </div>
-        </div>
-
+    <div class="row">
     </div>
-    <div class="footer">
-    </div>
-    <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+</div>
+
+<div class="footer">
+</div>
+
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -158,9 +158,9 @@
             </div>
           </div>
         </div>
-      </div>    
-    <script src="assets/javascript/game.js"></script>
-</div>     
+</div>    
+<script src="assets/javascript/game.js"></script>
+  
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
