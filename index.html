@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="The Hangman Game">
     <meta name="author" content="Mflorez31">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
@@ -15,7 +16,7 @@
     <title>The Hangman Game</title>
 </head>
 <body>
-    <div class="pos-f-t">
+<div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" style="color: lightslategray;">Creator's sites</a>
@@ -67,8 +68,7 @@
                 The Hangman Game
               </a>
         </nav>
-      </div>
-
+</div>
 
 <div class="body-container">   
     <div class="jumbotron jumbotron-fluid">
@@ -76,39 +76,47 @@
             <div class="row">
             
             <div class="col-sm-3">
-            <img class="img-TheHangman" src="assets/images/the-hangman.jpg" style="width: 300px; height: 300px;">
+            <img class="img-TheHangman" src="assets/images/the-hangman.jpg">
             </div>
             <div class="col-lg-6">
             <h1 class="display-4">The Hangman Game</h1>
             <p class="lead">A Quentin Tarantino movie themed hangman game.. </p>
-            <p class="lead">Guess the character or movie title below based on quote provided.</p>
+            <p class="lead">Can you guess the word, character or movie title before the Hangman gets you?</p>
             </div>
             <div class="col-sm-2"></div>
             </div>
         </div>
     </div>
-    
     <div class="game-container">
-        <div class="row" style="Height: 800px; padding-top: 40px;">
-            <div class="col-sm-2"></div>
-            <div class="col-md-4">
-                <h2>Hint Quote</h2>
-                <h3 id="hintQuote"></h3>
+        <div class="row">
+            <div class="col-sm-4">
+                <div id="bs"></div>
+
+                <h2 id="clues"></h2>
+                <br>
+                <h3 id="mType"></h3>
+                <strong> <h3 id="aType"></h3> </strong>
+                <br>
+                <h2 id="mQuote"></h2>
+                <h3 id="aQuote"></h3>
+                <br>
                 <div id="win-pic">
                     <h2>YOU WIN!</h2>
                 </div>
+                
+            </div>
+            <div class="col-sm-3">
                 <h3>CURRENT WORD</h3>
-                    <h2><span id="currentWord"><strong>...None. Press Start</strong></span></h2>
+                <h2><span id="currentWord"><strong>...None. Press Start</strong></span></h2>
                 <Br>
-                <h4>Letters already guessed</h4>
-                <strong><h4 id="prevGuesses" style="color: wheat;"></h4></strong>
-                <h3>Guesses remaining</h3>
+                <h4 id="lag"></h4>
+                <strong><h4 id="prevGuesses"></h4></strong>
+                <br>
+                <h3 id="gr"></h3>
                 <h1 id="guessesRemaining"style="color: red;"></h1>
             </div>
-            <div class="col-md-4">
-                    <button id="button-start" class="btn btn-dark start" value="start"><h1>Start</h1></button>
-                    <button id="button-reset" class="btn btn-dark reset" value="reset"><h1>Reset</h1></button>
-                <h2>Click Start Then Press Any Key To Get Started!</h2>
+
+            <div class="col-md-5">
                 <div class="guessImgcontainer">
                     <div id="guess-1" class="guessImg"> <img src="assets/images/stand-0.jpg" style="width: 500px; height: 500px;"> </div>
                     <div id="guess-2" class="guessImg"> <img src="assets/images/post-1.jpg"style="width: 54px; height: 319px;"></div>
@@ -123,13 +131,35 @@
                 </div>
 
             </div>
-            <div class="col-sm-2"></div>
         </div>
 
     </div>
-    
+    <div class="footer">
+    </div>
+    <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalCenterTitle"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p id=mod1></p>
+                <br>
+                <p id=mod2></p>
+                <br>
+                Click reset to start again
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button id="button-restart1" type="button" class="btn btn-primary">Restart</button>
+            </div>
+          </div>
+        </div>
+      </div>    
     <script src="assets/javascript/game.js"></script>
-
 </div>     
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

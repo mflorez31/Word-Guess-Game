@@ -8,11 +8,25 @@
 }
 
 .game-container {
+    background-image: url("../images/QHB.jpg");
+    color: aliceblue;
+    Height: 400px; 
     margin: top 15px;
+    padding-top: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.footer {
+    background-image: url("../images/footerpic.jpg");
+    color: aliceblue;
+    height: 600px;
 }
 
 .img-TheHangman {
     float: left;
+    width: 300px; 
+    height: 300px;
 }
 
 .display-4 {
@@ -27,14 +41,11 @@
     margin: 20px 5px 10px 25px
 }
 
-.game-container {
-    background-image: url("../images/QHB.jpg");
-    color: aliceblue;
-}
-
 #win-pic {
    visibility: hidden; 
 }
+
+
 
 .guessImgcontainer {
     position:relative;
@@ -43,6 +54,7 @@
 .guessImg{
     visibility: hidden; 
 }
+
 
 #guess-1 {
     position:absolute;
@@ -104,7 +116,3 @@
     top: 210px; left: 214px;
     z-index: 6;
 } 
-
-.prevGuesses {
-    color: red;
-}
