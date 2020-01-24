@@ -5,6 +5,8 @@ body {
 .jumbotron  {
     background-color: black;
     width: 100%;
+    padding-bottom: 0;
+    padding-top: 25px;
 }
 
 .game-container {
@@ -34,6 +36,15 @@ body {
     float: left;
     width: 280px; 
     height: 280px;
+}
+#bs {
+    padding: 4px;
+    padding-top: 0;
+}
+
+#bs2 {
+    padding: 4px;
+    padding-top: 0;
 }
 
 .display-4 {

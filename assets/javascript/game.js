@@ -6,13 +6,14 @@ var guesses2 = [];
 var remainingLetters = "";
 var remainingChances= 7;
 var answerArray = [];
+var sound= true;
 //Awnser constructor 
 function Awnser(word, quote, type, numberA) {
     this.word = word;
     this.quote = quote;
     this.type = type;
     this.numberA = 0;
-  }
+};
 //Pushes all answers in to array
 function answerKey(){
     var A1 = new Awnser("django unchained", "I like the way you die boy", "Movie Title", 0)
@@ -27,7 +28,40 @@ function answerKey(){
         answers2.push(A1,A2,A3,A4,A5,A6,A7,A8)
     }
     pAwnsers();
+};
+
+var soundArray =[
+    new Audio("assets/sounds/pokerchips.wav"),
+    new Audio("assets/sounds/win.wav"),
+    new Audio("assets/sounds/loss.wav"),
+    new Audio("assets/sounds/correct.wav"),
+    new Audio("assets/sounds/wrong.wav"),
+    new Audio("assets/sounds/reset.wav")
+]
+
+function mute() {
+    sound = -1;
+    var m=$('<input/>').attr({
+        type: "button",
+        id: "unmute",
+        value: 'Un-Mute',
+        class: "btn btn-dark start"
+    });
+    $("#bs2").html(m);
 }
+
+function unmute() {
+    sound= true;
+    var m=$('<input/>').attr({
+        type: "button",
+        id: "mute",
+        value: 'Mute',
+        class: "btn btn-dark start"
+    });
+    $("#bs2").html(m);
+}
+
+
 //Que starting elements
 function queStart() {
     $(function() {
@@ -37,12 +71,20 @@ function queStart() {
             value: 'Start',
             class: "btn btn-dark start"
         });
+        var m=$('<input/>').attr({
+            type: "button",
+            id: "mute",
+            value: 'Mute',
+            class: "btn btn-dark start"
+        });
         $("#bs").append(r);  
+        $("#bs2").append(m);
         $("#clues").html("<h2>Click Start Button To Get Started!</h2><br><p>How to play- <br> Guess the phrase, character or movie title based on the clues provided. The words to guess are represented by a row of dashes.Guess a letter by pressing any letter on your keyboard. Wrong awnsers will be placed in the already guessed column. Correct awnsers are filled in. Good luck! <br>Click Start Button To Get Started!</p>")
         answerKey();
         enableStart();
     });
-}
+
+};
 //Draws hangman
 function drawGuy(){
     if(remainingChances <= 9){
@@ -51,10 +93,10 @@ function drawGuy(){
     if(remainingChances <= 8){
         document.getElementById("guess-2").style.visibility = "visible";
     }
-    if(remainingChances <= 7){
+    if(remainingChances <= 6){
         document.getElementById("guess-3").style.visibility = "visible";
     }
-    if(remainingChances <= 6){
+    if(remainingChances <= 5){
         document.getElementById("guess-4").style.visibility = "visible";
     }
     if(remainingChances <= 5){
@@ -92,8 +134,17 @@ function undrawGuy() {
 function enableStart() {
     document.getElementById("button-start").addEventListener("click", function() {
         newWord2();
+        if( sound === true) {
+        soundArray[0].play();
+        };
       });
-}
+    document.getElementById("mute").addEventListener("click", function() {
+        mute();
+    });  
+    document.getElementById("unmute").addEventListener("click", function() {
+        unmute();
+    });  
+};
 
 //Creates the new word
 function newWord2(){
@@ -124,42 +175,17 @@ function newWord2(){
     function gameSetup() {
     $(function() {
         $("#currentWord").text(answerArray);
-    });
-
-    $(function() {
         $("#clues").text("Clues");
-    });
-
-    $(function() {
         $("#mType").text("This is a " );
-    });
-
-    $(function() {
         $("#aType").text(key.type);
-    });
-
-    $(function() {
         $("#mQuote").text("A quote from the movie-")
-    });
-
-    $(function() {
         $("#aQuote").text(key.quote)
-    });
-
-    $(function() {
         $("#gr").text("Guesses remaining")
-    });
-
-    $(function() {
         $("#guessesRemaining").text(remainingChances)
-    });
-    $(function() {
         $("#lag").text("Letters already guessed")
-    });
-
-    $(function() {
         $("#prevGuesses").text(guesses)
     });
+
     };
     gameSetup();
     drawGuy();
@@ -172,7 +198,12 @@ function newWord2(){
 //allows players to guess using keyboard
 function startG() {
     document.onkeyup= function(event) { 
-    var guess= event.key;
+    if(!(/[a-z]/i.test(String.fromCharCode(event.keyCode)))) {
+            event.preventDefault();
+            return false;
+        }
+    
+    var guess= event.key.toLowerCase();
     var n= word.indexOf(guess);
     var z= guesses2.indexOf(guess);
     var t= guesses.indexOf(guess);
@@ -189,6 +220,9 @@ function startG() {
                 $("#lag").text("Letters already guessed")
                 $("#prevGuesses").text(guesses)
             });
+            if( sound === true) {
+                soundArray[4].play();
+                };
             drawGuy();
         }
     }
@@ -196,6 +230,9 @@ function startG() {
     for (var j= 0; j < word.length; j++){
         if (word[j] === guess){
             if( z === -1){
+                if( sound === true) {
+                    soundArray[3].play();
+                    };
                 guesses2.push(guess);
                 answerArray[j] = guess;
                 remainingLetters--;   
@@ -210,7 +247,7 @@ function startG() {
         };
     }
     }
-}
+};
 //resets game after finish
 function enableRestart() {
     document.getElementById("button-restart").addEventListener("click", function() {
@@ -221,14 +258,20 @@ function enableRestart() {
         remainingLetters = "";
         remainingChances= 7;
         answerArray = [];
+        if( sound === true) {
+            soundArray[5].play();
+            };
         answerKey();
         newWord2();
         undrawGuy();
         drawGuy();
       });
-}      
+};   
 //Winning sequence
 function win() {
+    if( sound === true) {
+        soundArray[1].play();
+        };
     $('#ModalCenter').modal('show');
     $(function() {
         $("#ModalCenterTitle").text("YOU WIN!!!")
@@ -249,9 +292,12 @@ function win() {
         drawGuy();
         $('#ModalCenter').modal('hide');
       });
-}
+};
 //losing sequence
 function loss() {
+    if( sound === true) {
+        soundArray[2].play();
+        };
     $('#ModalCenter').modal('show');
     $(function() {
         $("#ModalCenterTitle").text("YOU WERE HUNG")
@@ -267,6 +313,9 @@ function loss() {
         remainingLetters = "";
         remainingChances= 7;
         answerArray = [];
+        if( sound === true) {
+            soundArray[5].play();
+            };
         answerKey();
         newWord2();
         undrawGuy();
@@ -274,6 +323,7 @@ function loss() {
 
         $('#ModalCenter').modal('hide');
       });
-}
+};
 //Starts the game
-queStart()
+queStart();
+//Starts sound
